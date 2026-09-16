@@ -2,7 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-indigo.svg)](https://opensource.org/licenses/MIT)
 [![Stack](https://img.shields.io/badge/Stack-MERN%20+%20TailwindCSS%20+%20Ollama-06b6d4.svg)]()
-[![Build](https://img.shields.io/badge/Build-Passing%20(100%25)-10b981.svg)]()
+[![Frontend](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://neuro-flow-ai-rho.vercel.app)
+[![Backend](https://img.shields.io/badge/API%20Status-Render%20(Healthy)-46e3b7?logo=render)](https://neuroflow-ai-4i2z.onrender.com/api/health)
+
+🌐 **Live Production App**: [https://neuro-flow-ai-rho.vercel.app](https://neuro-flow-ai-rho.vercel.app)  
+📡 **Live Backend API**: [https://neuroflow-ai-4i2z.onrender.com/api](https://neuroflow-ai-4i2z.onrender.com/api)
 
 **NeuroFlow AI** is a production-grade, full-stack MERN application built in pure JavaScript (ES6+) that transforms multi-format documents (PDF, DOCX, TXT, MD, CSV, Images with OCR) into searchable, vector-indexed workspaces. It orchestrates a **5-stage agentic workflow pipeline** (Planner ➔ Retriever ➔ Task ➔ Writer ➔ Evaluator) with verifiable citations and 100% offline fallback capabilities.
 
