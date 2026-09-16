@@ -4,6 +4,7 @@
   "description": "Backend server for NeuroFlow AI - Agentic Document Intelligence Workspace",
   "main": "src/server.js",
   "scripts": {
+    "build": "node -e \"console.log('Server build ready')\"",
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
     "test": "node scripts/test-api.js"
