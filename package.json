@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "NeuroFlow AI - Agentic Workspace Document Intelligence Platform",
   "main": "server/src/server.js",
+  "engines": {
+    "node": ">=18.0.0 <23.0.0"
+  },
   "scripts": {
-    "install:all": "npm install --prefix server && npm install --prefix client",
-    "build": "npm --prefix client install && npm --prefix client run build && npm --prefix server install",
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
     "start": "node server/src/server.js",
-    "server": "npm --prefix server start",
-    "client": "npm --prefix client run dev",
-    "dev": "node -e \"console.log('Start server and client in separate terminals with npm run server and npm run client')\""
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev"
   },
   "keywords": [
     "ai",
