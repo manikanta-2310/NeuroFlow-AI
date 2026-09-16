@@ -1,0 +1,19 @@
+services:
+  # NeuroFlow AI Unified Monolith Web Service
+  - type: web
+    name: neuroflow-ai
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SEED_SAMPLE_DATA
+        value: "true"
+      - key: AI_FALLBACK_TO_MOCK
+        value: "true"

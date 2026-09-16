@@ -115,5 +115,40 @@ cd client && npm run build
 
 ---
 
+## 🌐 Deployment Options
+
+### Option 1: 1-Click Render Unified Deployment (Recommended - Free)
+Deploy the full-stack app as a single service on [Render](https://render.com):
+1. Create a new **Web Service** connected to your GitHub repository `manikanta-2310/NeuroFlow-AI`.
+2. Configure settings:
+   - **Environment**: `Node`
+   - **Build Command**: `npm run build`
+   - **Start Command**: `npm start`
+3. Add Environment Variables:
+   - `NODE_ENV`: `production`
+   - `JWT_SECRET`: *(Any secure random string)*
+   - `MONGODB_URI`: *(Optional: your MongoDB Atlas URI, or leave empty for built-in in-memory fallback)*
+   - `AI_FALLBACK_TO_MOCK`: `true`
+
+---
+
+### Option 2: Decoupled (Vercel Frontend + Render/Railway Backend)
+
+#### Frontend (Vercel)
+1. Import repository on [Vercel](https://vercel.com).
+2. Set **Root Directory** to `client`.
+3. Set Environment Variable:
+   - `VITE_API_BASE_URL`: `https://your-backend-api.onrender.com/api`
+4. Click **Deploy**.
+
+#### Backend (Render / Railway)
+1. Deploy `server` directory on [Render](https://render.com) or [Railway](https://railway.app).
+2. Set **Root Directory** to `server`.
+3. Set **Build Command**: `npm install`
+4. Set **Start Command**: `npm start`
+5. Configure your `JWT_SECRET` and `MONGODB_URI` environment variables.
+
+---
+
 ## 📄 License
 MIT License. Created for Agentic Document Intelligence Workflows.

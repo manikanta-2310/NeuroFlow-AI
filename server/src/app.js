@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const config = require('./config/env');
 const { errorHandler } = require('./middleware/errorHandler');
 const { httpError } = require('./utils/errors');
@@ -42,6 +43,18 @@ app.use('/api/documents', documentRouter);
 app.use('/api/workspaces/:workspaceId/chat', chatRoutes);
 app.use('/api/workspaces/:workspaceId/runs', workspaceRunRouter);
 app.use('/api/runs', runRouter);
+
+// Serve client static production build if available
+const clientDistPath = path.join(__dirname, '../../client/dist');
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get('*', (req, res, next) => {
+    if (req.originalUrl.startsWith('/api') || req.originalUrl.startsWith('/uploads')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
 
 // 404 Handler for API
 app.use('/api/*', (req, res, next) => {
